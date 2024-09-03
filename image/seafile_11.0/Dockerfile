@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-ENV SEAFILE_SERVER=seafile-server SEAFILE_VERSION=
+ENV SEAFILE_SERVER=seafile-server SEAFILE_VERSION=11.0.12
 
 # https://github.com/phusion/baseimage-docker
 COPY base_scripts /bd_build
@@ -42,7 +42,7 @@ RUN pip3 install --timeout=3600 click termcolor colorlog pymysql django==4.2.* \
     -i https://pypi.tuna.tsinghua.edu.cn/simple/ && rm -r /root/.cache/pip
 
 # Scripts
-COPY scripts_11.0 /scripts
+COPY scripts/scripts_11.0 /scripts
 COPY templates /templates
 COPY services /services
 
